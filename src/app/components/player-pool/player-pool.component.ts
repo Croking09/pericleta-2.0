@@ -1,27 +1,19 @@
-import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { CommonModule } from "@angular/common";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 
 @Component({
-  selector: 'app-player-pool',
+  selector: "app-player-pool",
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './player-pool.component.html',
-  styleUrl: './player-pool.component.scss',
+  templateUrl: "./player-pool.component.html",
+  styleUrl: "./player-pool.component.scss",
 })
 export class PlayerPoolComponent implements OnInit {
   @Input() disabled = false;
   @Output() poolChange = new EventEmitter<string>();
 
-  value = `Faker
-Caps
-Chovy
-Rekkles
-Zeus
-Oner
-Keria
-BuLLDoG
-Jankos`;
+  value = ``;
 
   ngOnInit(): void {
     this.emitChange();
