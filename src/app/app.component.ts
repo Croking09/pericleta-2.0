@@ -37,6 +37,10 @@ export class AppComponent {
     () => this.draft.canDraw() && !this.isAnimating(),
   );
 
+  protected readonly canReset = computed(
+    () => !this.isAnimating() && this.draft.hasStarted(),
+  );
+
   onPoolChange(text: string): void {
     this.draft.setPoolText(text);
   }
