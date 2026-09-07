@@ -34,7 +34,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/rift-draft/browser
+          path: ./dist/pericleta-2.0/browser
 
   deploy:
     needs: build
