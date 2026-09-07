@@ -1,0 +1,10 @@
+<section class="player-pool">
+  <label class="pool-label" for="pool">// PLAYER POOL</label>
+  <textarea
+    id="pool"
+    rows="11"
+    [(ngModel)]="value"
+    (ngModelChange)="emitChange()"
+    [disabled]="disabled"
+  ></textarea>
+</section>

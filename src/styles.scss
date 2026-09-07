@@ -1,0 +1,63 @@
+:root {
+  --bg-app: #0b0d10;
+  --bg-panel: #101418;
+  --bg-input: #0f1318;
+  --border: #2a2f36;
+  --text: #c9d1d9;
+  --text-dim: #7d8590;
+  --text-bright: #f0e6d2;
+  --gold: #c8aa6e;
+
+  --blue: #5b9bd5;
+  --blue-bg: #0f1620;
+  --blue-bg-strong: #13233a;
+  --blue-border: #1e3a5f;
+
+  --red: #e07a7a;
+  --red-bg: #1c0f0f;
+  --red-bg-strong: #3a1313;
+  --red-border: #4a1d1d;
+
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--bg-app);
+  color: var(--text);
+  font-family: var(--font-mono);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+textarea {
+  font-family: inherit;
+}
+
+.flying-token {
+  position: fixed;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--gold);
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 1000;
+  transition:
+    transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 0.5s ease;
+}

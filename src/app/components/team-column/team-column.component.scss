@@ -1,0 +1,80 @@
+.team-column {
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  border-radius: 2px;
+}
+
+.team-column.blue {
+  border-color: var(--blue-border);
+  background: var(--blue-bg);
+
+  .team-header {
+    background: var(--blue-bg-strong);
+    color: var(--blue);
+  }
+
+  .slot-index,
+  .slot-dot {
+    color: var(--blue);
+  }
+
+  .slot {
+    border-bottom-color: var(--blue-border);
+  }
+}
+
+.team-column.red {
+  border-color: var(--red-border);
+  background: var(--red-bg);
+
+  .team-header {
+    background: var(--red-bg-strong);
+    color: var(--red);
+  }
+
+  .slot-index,
+  .slot-dot {
+    color: var(--red);
+  }
+
+  .slot {
+    border-bottom-color: var(--red-border);
+  }
+}
+
+.team-header {
+  padding: 14px 18px;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.team-slots {
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.slot {
+  font-size: 17px;
+  color: #3d4650;
+  padding-bottom: 12px;
+  border-bottom: 1px solid transparent;
+  display: flex;
+  gap: 10px;
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  &.filled {
+    color: var(--text-bright);
+  }
+}
+
+.slot-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,55 @@
+<div class="app-shell">
+  <header class="app-header">
+    <img class="logo" src="/logo.png" />
+    <div class="title">PERICLETA 2.0</div>
+  </header>
+
+  <main class="app-main">
+    <div class="layout-grid">
+      <app-team-column
+        #blueColumn
+        color="blue"
+        label="EQUIPO AZUL"
+        [players]="draft.blueTeam()"
+      ></app-team-column>
+
+      <section class="center-panel">
+        <app-player-pool
+          [disabled]="draft.hasStarted()"
+          (poolChange)="onPoolChange($event)"
+        ></app-player-pool>
+
+        <div class="draw-controls">
+          <button
+            class="draw-btn"
+            [disabled]="!canInteract()"
+            (click)="onDraw()"
+          >
+            SORTEAR PAREJA
+          </button>
+
+          <button
+            class="reset-btn"
+            (click)="onReset()"
+            [disabled]="!canInteract()"
+          >
+            Reiniciar sorteo
+          </button>
+        </div>
+
+        <app-draw-reel
+          #reel
+          (blueLocked)="onBlueLocked($event)"
+          (redLocked)="onRedLocked($event)"
+        ></app-draw-reel>
+      </section>
+
+      <app-team-column
+        #redColumn
+        color="red"
+        label="EQUIPO ROJO"
+        [players]="draft.redTeam()"
+      ></app-team-column>
+    </div>
+  </main>
+</div>

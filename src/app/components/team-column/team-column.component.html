@@ -1,0 +1,12 @@
+<div class="team-column" [class.blue]="color === 'blue'" [class.red]="color === 'red'">
+  <div class="team-header">// {{ label }}</div>
+  <div class="team-slots">
+    @for (player of slots; track $index) {
+      <div class="slot" [class.filled]="player" #slotRef>
+        <span class="slot-index">{{ slotIndex($index) }}</span>
+        <span class="slot-dot">·</span>
+        <span class="slot-name">{{ player ?? '—' }}</span>
+      </div>
+    }
+  </div>
+</div>
